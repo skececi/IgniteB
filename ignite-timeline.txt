@@ -1,0 +1,267 @@
+ignite timeline
+GET /getOneIssue
+
+*************** Week of 3/24 ***************
+Raghav, Sam: WhiteHouse API Wrapper
+* get the top petitions
+* sort petitions into issue categories
+* return by issue category
+Returns:
+{
+	“Foreign Policy” : [["Title of Event","link.to.event"],["Title of Event","link.to.event"]]
+}
+
+GET /getMultipleIssues
+Returns:
+/multiple-issues
+{
+	“Foreign Policy” : [["Title of Event","link.to.event"],["Title of Event","link.to.event"]]
+
+	“Environment” : [["Title of Event","link.to.event"],["Title of Event","link.to.event"]]
+	
+	“Politics” : [["Title of Event","link.to.event"],["Title of Event","link.to.event"]]}
+
+Justin: Image API Wrapper (Bing, Google, etc.)
+POST /getImage
+Arguments: issue
+Returns:
+{
+	"issue": "Name of Issue",
+	"picture_url": "link.to.image"
+}
+
+Alice: EventBrite API Wrapper
+POST /getEvents
+Arguments: issue
+{
+	"issue": "Name of Issue",
+	"events": [
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		}, 
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		},
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		},
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		}
+	]
+}
+
+
+Alice: Overall API Wrapper
+* basically calls all the API wrappers and combines info
+1) GET /one-issue
+2) GET /multiple-issues
+
+
+
+*************** Week of 3/31 ***************
+- Get webapp to call API wrapper using /multiple-issues
+- Get extension to call API wrapper using /one-issue
+- user login: get database connected/working
+- user login: login form
+
+
+*************** Week of 4/7 ***************
+- submit form 
+- pinned functionality
+
+
+*************** Week of 4/14 ***************
+- flush out front-end, make it look pretty
+
+
+*************** Week of 4/21 ***************
+- Work on BigApps Submission
+- SUBMIT!!
+
+
+
+===========
+
+FINAL API WRAPPER ENDPOINTS
+*to do: add events
+
+/one-issue
+returns:
+{
+	"issue": "Name of Issue",
+	"picture_url": "link.to.image",
+	"petitions": [
+		{ 
+			"title": "Title of Petition",
+			"link": "link.to.petition"
+		}, 
+		{ 
+			"title": "Title of Petition",
+			"link": "link.to.petition"
+		},
+		{ 
+			"title": "Title of Petition",
+			"link": "link.to.petition"
+		},
+		{ 
+			"title": "Title of Petition",
+			"link": "link.to.petition"
+		}
+	],
+	"events": [
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		}, 
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		},
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		},
+		{ 
+			"title": "Title of Event",
+			"link": "link.to.event"
+		}
+	]
+}
+
+/multiple-issues
+{	
+
+	
+
+	"issues": [
+		{
+			"issue": "Name of Issue",
+			"picture_url": "link.to.image",
+			"petitions": [
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}, 
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}
+			],
+			"events": [
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}, 
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}
+			]
+		},
+		{
+			"issue": "Name of Issue",
+			"picture_url": "link.to.image",
+			"petitions": [
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}, 
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}
+			],
+			"events": [
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}, 
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}
+			]
+		},
+		{
+			"issue": "Name of Issue",
+			"picture_url": "link.to.image",
+			"petitions": [
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}, 
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				},
+				{ 
+					"title": "Title of Petition",
+					"link": "link.to.petition"
+				}
+			],
+			"events": [
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}, 
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				},
+				{ 
+					"title": "Title of Event",
+					"link": "link.to.event"
+				}
+			]
+		}
+	]
+}
+
+/getBackground
+	returns url of random image
+

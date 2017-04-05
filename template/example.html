@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]> <html lang="en-US" prefix="og: http://ogp.me/ns#" class="ie8 ie" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+
+<!--[if gt IE 8]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {}), __nr_require = function(e, t, n) {
+            function r(n) {
+                if (!t[n]) {
+                    var o = t[n] = {
+                        exports: {}
+                    };
+                    e[n][0].call(o.exports, function(t) {
+                        var o = e[n][1][t];
+                        return r(o || t)
+                    }, o, o.exports)
+                }
+                return t[n].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var o = 0; o < n.length; o++) r(n[o]);
+            return r
+        }({
+            1: [function(e, t, n) {
+                function r() {}
+
+                function o(e, t, n) {
+                    return function() {
+                        return i(e, [(new Date).getTime()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this
+                    }
+                }
+                var i = e("handle"),
+                    a = e(2),
+                    u = e(3),
+                    c = e("ee").get("tracer"),
+                    f = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = f);
+                var s = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                    l = "api-",
+                    p = l + "ixn-";
+                a(s, function(e, t) {
+                    f[t] = o(l + t, !0, "api")
+                }), f.addPageAction = o(l + "addPageAction", !0), f.setCurrentRouteName = o(l + "routeName", !0), t.exports = newrelic, f.interaction = function() {
+                    return (new r).get()
+                };
+                var d = r.prototype = {
+                    createTracer: function(e, t) {
+                        var n = {},
+                            r = this,
+                            o = "function" == typeof t;
+                        return i(p + "tracer", [Date.now(), e, n], r),
+                            function() {
+                                if (c.emit((o ? "" : "no-") + "fn-start", [Date.now(), r, o], n), o) try {
+                                    return t.apply(this, arguments)
+                                } finally {
+                                    c.emit("fn-end", [Date.now()], n)
+                                }
+                            }
+                    }
+                };
+                a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, t) {
+                    d[t] = o(p + t)
+                }), newrelic.noticeError = function(e) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, (new Date).getTime()])
+                }
+            }, {}],
+            2: [function(e, t, n) {
+                function r(e, t) {
+                    var n = [],
+                        r = "",
+                        i = 0;
+                    for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1);
+                    return n
+                }
+                var o = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            3: [function(e, t, n) {
+                function r(e, t, n) {
+                    t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+                    for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+                    return i
+                }
+                t.exports = r
+            }, {}],
+            ee: [function(e, t, n) {
+                function r() {}
+
+                function o(e) {
+                    function t(e) {
+                        return e && e instanceof r ? e : e ? c(e, u, i) : i()
+                    }
+
+                    function n(n, r, o) {
+                        if (!p.aborted) {
+                            e && e(n, r, o);
+                            for (var i = t(o), a = v(n), u = a.length, c = 0; c < u; c++) a[c].apply(i, r);
+                            var f = s[w[n]];
+                            return f && f.push([y, n, r, i]), i
+                        }
+                    }
+
+                    function d(e, t) {
+                        b[e] = v(e).concat(t)
+                    }
+
+                    function v(e) {
+                        return b[e] || []
+                    }
+
+                    function g(e) {
+                        return l[e] = l[e] || o(n)
+                    }
+
+                    function m(e, t) {
+                        f(e, function(e, n) {
+                            t = t || "feature", w[n] = t, t in s || (s[t] = [])
+                        })
+                    }
+                    var b = {},
+                        w = {},
+                        y = {
+                            on: d,
+                            emit: n,
+                            get: g,
+                            listeners: v,
+                            context: t,
+                            buffer: m,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return y
+                }
+
+                function i() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (p.aborted = !0, s = p.backlog = {})
+                }
+                var u = "nr@context",
+                    c = e("gos"),
+                    f = e(2),
+                    s = {},
+                    l = {},
+                    p = t.exports = o();
+                p.backlog = s
+            }, {}],
+            gos: [function(e, t, n) {
+                function r(e, t, n) {
+                    if (o.call(e, t)) return e[t];
+                    var r = n();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, t, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (i) {}
+                    return e[t] = r, r
+                }
+                var o = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            handle: [function(e, t, n) {
+                function r(e, t, n, r) {
+                    o.buffer([e], r), o.emit(e, t, n)
+                }
+                var o = e("ee").get("handle");
+                t.exports = r, r.ee = o
+            }, {}],
+            id: [function(e, t, n) {
+                function r(e) {
+                    var t = typeof e;
+                    return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function() {
+                        return o++
+                    })
+                }
+                var o = 1,
+                    i = "nr@id",
+                    a = e("gos");
+                t.exports = r
+            }, {}],
+            loader: [function(e, t, n) {
+                function r() {
+                    if (!h++) {
+                        var e = y.info = NREUM.info,
+                            t = l.getElementsByTagName("script")[0];
+                        if (setTimeout(f.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return f.abort();
+                        c(b, function(t, n) {
+                            e[t] || (e[t] = n)
+                        }), u("mark", ["onload", a()], null, "api");
+                        var n = l.createElement("script");
+                        n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t)
+                    }
+                }
+
+                function o() {
+                    "complete" === l.readyState && i()
+                }
+
+                function i() {
+                    u("mark", ["domContent", a()], null, "api")
+                }
+
+                function a() {
+                    return (new Date).getTime()
+                }
+                var u = e("handle"),
+                    c = e(2),
+                    f = e("ee"),
+                    s = window,
+                    l = s.document,
+                    p = "addEventListener",
+                    d = "attachEvent",
+                    v = s.XMLHttpRequest,
+                    g = v && v.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    CT: clearTimeout,
+                    XHR: v,
+                    REQ: s.Request,
+                    EV: s.Event,
+                    PR: s.Promise,
+                    MO: s.MutationObserver
+                }, e(1);
+                var m = "" + location,
+                    b = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1016.min.js"
+                    },
+                    w = v && g && g[p] && !/CriOS/.test(navigator.userAgent),
+                    y = t.exports = {
+                        offset: a(),
+                        origin: m,
+                        features: {},
+                        xhrWrappable: w
+                    };
+                l[p] ? (l[p]("DOMContentLoaded", i, !1), s[p]("load", r, !1)) : (l[d]("onreadystatechange", o), s[d]("onload", r)), u("mark", ["firstbyte", a()], null, "api");
+                var h = 0
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="msapplication-tap-highlight" content="no" />
+
+
+
+    <!-- LINKS -->
+
+
+
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+    <link rel="pingback" href="https://allendjal.com/xmlrpc.php" />
+
+
+
+    <!-- WP HEAD -->
+
+
+
+    <title>AllenDjal Inc. — Creative Marketing Agency</title>
+
+    <!-- This site is optimized with the Yoast SEO plugin v3.8 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta name="description" content="AllenDjal Inc. is a Los Angeles based creative marketing agency known for creating memorable brand experiences to help businesses thrive in the world." />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="https://allendjal.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AllenDjal Inc. — Creative Marketing Agency" />
+    <meta property="og:description" content="AllenDjal Inc. is a Los Angeles based creative marketing agency known for creating memorable brand experiences to help businesses thrive in the world." />
+    <meta property="og:url" content="https://allendjal.com/" />
+    <meta property="og:site_name" content="AllenDjal Inc." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="AllenDjal Inc. is a Los Angeles based creative marketing agency known for creating memorable brand experiences to help businesses thrive in the world." />
+    <meta name="twitter:title" content="AllenDjal Inc. — Creative Marketing Agency" />
+    <meta name="twitter:site" content="@allendjalinc" />
+    <meta name="twitter:creator" content="@allendjalinc" />
+    <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/allendjal.com\/","name":"AllenDjal Inc. | Creative Marketing Agency","potentialAction":{"@type":"SearchAction","target":"https:\/\/allendjal.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/allendjal.com\/","sameAs":["https:\/\/www.facebook.com\/allendjalinc\/","https:\/\/www.instagram.com\/allendjalinc\/","https:\/\/www.linkedin.com\/company\/allendjal","https:\/\/www.behance.net\/allendjalinc","https:\/\/twitter.com\/allendjalinc"],"@id":"#organization","name":"AllenDjal Inc.","logo":"https:\/\/allendjal.com\/wp-content\/uploads\/2016\/04\/allendjal-inc-logo.jpg"}</script>
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="AllenDjal Inc. &raquo; Feed" href="https://allendjal.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="AllenDjal Inc. &raquo; Comments Feed" href="https://allendjal.com/comments/feed/" />
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/allendjal.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.3"
+            }
+        };
+        ! function(a, b, c) {
+            function d(a) {
+                var c, d, e, f, g, h = b.createElement("canvas"),
+                    i = h.getContext && h.getContext("2d"),
+                    j = String.fromCharCode;
+                if (!i || !i.fillText) return !1;
+                switch (i.textBaseline = "top", i.font = "600 32px Arial", a) {
+                    case "flag":
+                        return i.fillText(j(55356, 56806, 55356, 56826), 0, 0), !(h.toDataURL().length < 3e3) && (i.clearRect(0, 0, h.width, h.height), i.fillText(j(55356, 57331, 65039, 8205, 55356, 57096), 0, 0), c = h.toDataURL(), i.clearRect(0, 0, h.width, h.height), i.fillText(j(55356, 57331, 55356, 57096), 0, 0), d = h.toDataURL(), c !== d);
+                    case "diversity":
+                        return i.fillText(j(55356, 57221), 0, 0), e = i.getImageData(16, 16, 1, 1).data, f = e[0] + "," + e[1] + "," + e[2] + "," + e[3], i.fillText(j(55356, 57221, 55356, 57343), 0, 0), e = i.getImageData(16, 16, 1, 1).data, g = e[0] + "," + e[1] + "," + e[2] + "," + e[3], f !== g;
+                    case "simple":
+                        return i.fillText(j(55357, 56835), 0, 0), 0 !== i.getImageData(16, 16, 1, 1).data[0];
+                    case "unicode8":
+                        return i.fillText(j(55356, 57135), 0, 0), 0 !== i.getImageData(16, 16, 1, 1).data[0];
+                    case "unicode9":
+                        return i.fillText(j(55358, 56631), 0, 0), 0 !== i.getImageData(16, 16, 1, 1).data[0]
+                }
+                return !1
+            }
+
+            function e(a) {
+                var c = b.createElement("script");
+                c.src = a, c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+            }
+            var f, g, h, i;
+            for (i = Array("simple", "flag", "unicode8", "diversity", "unicode9"), c.supports = {
+                    everything: !0,
+                    everythingExceptFlag: !0
+                }, h = 0; h < i.length; h++) c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]);
+            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function() {
+                c.DOMReady = !0
+            }, c.supports.everything || (g = function() {
+                c.readyCallback()
+            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function() {
+                "complete" === b.readyState && c.readyCallback()
+            })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='formidable-css' href='https://allendjal.com/wp-content/uploads/formidable/css/formidablepro.css?ver=11171821' type='text/css' media='all' />
+    <link rel='stylesheet' id='contact-form-7-css' href='https://allendjal.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.5.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='tt-easy-google-fonts-css' href='https://fonts.googleapis.com/css?family=Playfair+Display%3A900%2Cregular%2C700%2Citalic&#038;subset=latin%2Call&#038;ver=4.6.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='parent-theme-css' href='https://allendjal.com/wp-content/themes/alpha/style.css?ver=4.6.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='fontawesome-css' href='https://allendjal.com/wp-content/themes/alpha/css/font-awesome.min.css?ver=4.6.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='alpha-style-css' href='https://allendjal.com/wp-content/themes/alpha-child/style.css?ver=4.6.3' type='text/css' media='all' />
+    <style id='alpha-style-inline-css' type='text/css'>
+        /* CUSTOM FONTS */
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        span.medium,
+        span.large,
+        #main-menu.style-modern .top-menu li a,
+        .post-nav > a .subtitle,
+        .post-nav > a .title,
+        .post-header .title h1,
+        .post-header .title h2,
+        post-header > span.subtitle,
+        .infinite-text,
+        .main-post .post-header span,
+        .page-header-type h1,
+        .krown-button,
+        input[type="submit"],
+        .post-header > span.subtitle,
+        span.icl_lang_sel_current.icl_lang_sel_native,
+        .woocommerce-pagination,
+        #filter,
+        .woocommerce .price,
+        #filter-opener .count,
+        .single-product .cart .input-text,
+        .product-quantity .input-text,
+        .amount,
+        .single-product .cart .button,
+        .product-quantity .button,
+        .woocommerce-message .button,
+        .woocommerce-error .button,
+        .woocommerce-info .button,
+        .update-button {
+            font-family: 'Playfair Display', serif;
+            ;
+        }
+        body,
+        input,
+        textarea,
+        button {
+            font-family: 'Playfair Display', serif;
+            ;
+        }
+        .page-header .subtitle,
+        .post-header > span.author,
+        .page-header-type h2.subtitle,
+        .krown-portfolio span {
+            font-family: 'Playfair Display', serif;
+            ;
+        }
+        /* CUSTOM COLORS */
+        
+        a,
+        #main-menu.style-modern .top-menu li a:hover,
+        #main-menu.style-modern .top-menu li.selected > a,
+        #posts-container.classic .pagination a:hover,
+        #lang_sel ul ul a:hover,
+        #filter li a.selected,
+        .single-product .product_meta a:hover,
+        .woocommerce-MyAccount-navigation li a:hover {
+            color: #920000;
+        }
+        .pre-slide .page-header .title:after,
+        .page-header-type h1:after,
+        .krown-section-title h3:after,
+        .krown-section-title h4:after,
+        .post-content h3:after,
+        .post-content h4:after,
+        .line-link:after,
+        .fancybox-nav span:hover,
+        .fancybox-close:hover,
+        input[type="submit"]:hover,
+        #footer input[type="submit"]:hover,
+        .mejs-controls .mejs-time-rail .mejs-time-current,
+        .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+        .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current,
+        .mejs-overlay:hover .mejs-overlay-button,
+        .star-rating .star,
+        .star-rating .half-star,
+        .comment-form-rating a.star,
+        .single-product .cart .button:hover,
+        .product-quantity .button:hover,
+        .checkout-button.button,
+        .single-product .cart .button:hover,
+        .product-quantity .button:hover,
+        .woocommerce-message .button:hover,
+        .woocommerce-error .button:hover,
+        .woocommerce-info .button:hover,
+        .update-button:hover {
+            background-color: #920000;
+        }
+        .pagination a:hover,
+        .woocommerce-pagination a:hover,
+        .ui-slider-horizontal .ui-slider-handle:hover {
+            border-color: #920000;
+        }
+        #main-menu.style-classic li:not(.selected) a:hover,
+        #main-menu.style-classic li ul li a:hover {
+            color: #920000 !important;
+        }
+        /* CUSTOM CSS */
+        
+        p {
+            line-height: 2;
+            text-rendering: geometricPrecision;
+            margin-bottom: 2em;
+        }
+        .page-header .title {
+            text-transform: none;
+        }
+        .page-header .excerpt > p {
+            max-width: 600px;
+        }
+        h1 {
+            font-weight: 900;
+            color: #000;
+            text-rendering: geometricPrecision;
+        }
+        .page-header-type h1 {
+            font-family: 'Playfair Display';
+            font-weight: 900;
+            text-rendering: geometricPrecision;
+            text-transform: none;
+            line-height: 5rem;
+            font-size: 3.5rem;
+        }
+        .quote {
+            font-size: 36px;
+            color: #ffffff;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .website-box {
+            margin-bottom: -8rem;
+            margin-top: 6rem;
+        }
+        .pis-web-page {
+            padding: 0px 3.5%;
+        }
+        a {
+            color: #666;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        #main-menu.style-modern .top-menu li a {
+            font-weight: 900;
+            text-transform: none;
+            text-rendering: geometricPrecision;
+        }
+        .pis_image_1 {
+            background-image: url(https://allendjal.com/wp-content/uploads/2015/11/pis-los-angeles-shot.jpg) !important;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+        .pis_image_2 {
+            background-image: url(https://allendjal.com/wp-content/uploads/2016/05/pis-camera-installation-hi.jpg);
+            background-repeat: no-repeat;
+            background-size: 60rem;
+        }
+        .inner-row-cust {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        .page-header-type h1:after {
+            height: 0px;
+        }
+        #page-header > div {
+            max-width: 1200px;
+        }
+        .instagram-bg {
+            background: #e4405f url(https://allendjal.com/wp-content/uploads/2016/05/ig-bg.jpg) no-repeat left bottom;
+            background-size: cover;
+            margin-left: 0;
+        }
+        .twitter-bg {
+            background-color: #55acee;
+            margin-left: 0;
+        }
+        .linkedin-bg {
+            background-color: #007bb5;
+            margin-left: 0;
+        }
+        .behance-bg {
+            background-color: #1769ff;
+            margin-left: 0;
+        }
+        .krown-portfolio-grid .caption span {
+            font-weight: 400;
+            font-style: inherit;
+        }
+        .krown-portfolio-grid .caption h3 {
+            text-transform: none;
+            font-style: inherit;
+            font-weight: 900;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
+        .pre-slide .page-header .title {
+            font-weight: 900;
+            line-height: 54px;
+        }
+        .krown-portfolio-grid .caption {
+            padding-right: 45%;
+        }
+        .krown-portfolio-grid .caption {
+            padding-right: 50%;
+        }
+        .page-header .title {
+            font-size: 3rem;
+            max-width: 40%;
+            line-height: 4rem;
+        }
+        .page-header .excerpt > p {
+            max-width: 50%;
+        }
+        .pre-slide .page-header .title:after {
+            background: #ab0000;
+            margin: 10px 0 15px;
+        }
+        .pre-slide .page-header .title {
+            line-height: 1.3em;
+        }
+        #footer .normal {
+            background-color: #ab0000;
+        }
+        .allen-button {
+            font: bold 15px/54px "Playfair Display", sans-serif;
+            color: #fff;
+            height: 55px;
+            padding: 0 25px;
+            display: inline-block;
+            text-transform: uppercase;
+            -webkit-transition: color 150ms linear, background-color 150ms linear, border-color 150ms linear;
+            transition: color 150ms linear, background-color 150ms linear, border-color 150ms linear;
+        }
+        .no-touch .allen-button:hover {
+            background: #000000;
+            color: #fff;
+        }
+        .allen-button.light {
+            background-color: #000;
+            color: #fffff;
+        }
+        .allen-button.light:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .krown-button.light:hover {
+            background-color: #fff;
+        }
+        .haute_image_1 {
+            background-image: url(https://allendjal.com/wp-content/uploads/2016/08/hf-background.jpg) !important;
+            background-repeat: no-repeat;
+            background-size: 60rem;
+        }
+        .haute_image_2 {
+            background-image: url(https://allendjal.com/wp-content/uploads/2016/08/Brief.jpg);
+            background-repeat: no-repeat;
+            background-size: 60rem;
+        }
+        .hf-green-bg {
+            background-color: #007838;
+            margin-left: 0;
+        }
+        .hf-peach-bg {
+            background-color: #e48e42;
+            margin-left: 0;
+        }
+        .black-bg {
+            background-color: #000;
+            margin-left: 0;
+        }
+        .white-bg {
+            background-color: #fff;
+            margin-left: 0;
+        }
+        @media only screen and (max-width: 640px) {
+            .fullwidth-box {
+                background-image: none !important;
+            }
+        }
+        @media only screen and (max-width: 640px) {
+            .no-display-box {
+                display: none;
+                !important;
+            }
+        }
+        .grey_quote {
+            background-image: url(https://allendjal.com/wp-content/uploads/2016/08/Quote-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            max-width: 40%;
+            padding-left: 2%;
+        }
+        body[data-background="dark"] #menu-widget {
+            font-weight: 700;
+        }
+        @media (max-width: 640px),
+        (max-height: 720px) {
+            #menu-widget {
+                bottom: 25px;
+                font-size: .64rem;
+                line-height: 1.3rem;
+            }
+        }
+        .AD-logo {
+            display: inline-block;
+            width: 84px;
+            height: 69px;
+            background: url("/wp-content/uploads/2016/08/ad-footer.png") 50% 50% no-repeat;
+            text-decoration: none;
+        }
+        .AD-logo:hover {
+            background-color: #ab0000
+        }
+        .page-header .subtitle {
+            font-size: 18px;
+            font-style: normal;
+        }
+        .col-no-spacing-top {
+            padding-top: 0px !important;
+        }
+        .lines {
+            height: 2px;
+        }
+        .lines:before {
+            height: 2px;
+        }
+        .lines:after {
+            height: 2px;
+        }
+        @media (max-width: 1440px),
+        (max-height: 900px) {
+            p {
+                font-size: 18px !important;
+                line-height: 1.7;
+                letter-spacing: 0em;
+            }
+            h2 {
+                font-size: 42px !important;
+                margin-bottom: 32px !important;
+                line-height: 52px !important;
+            }
+            @media (max-width: 1068px),
+            (max-height: 720px) {
+                p {
+                    font-size: 16px !important;
+                    line-height: 2;
+                    letter-spacing: 0em;
+                }
+                h2 {
+                    font-size: 42px !important;
+                    margin-bottom: 0px !important;
+                    line-height: 52px !important;
+                }
+                @media (max-width: 520px),
+                (max-height: 400px) {
+                    h2 {
+                        font-size: 24px !important;
+                        line-height: 28px !important;
+                    }
+                }
+    </style>
+    <link rel='stylesheet' id='krown-font-head-css' href='https://fonts.googleapis.com/css?family=Playfair+Display%3A400%2C700&#038;ver=4.6.3' type='text/css' media='all' />
+    <script type='text/javascript' src='https://allendjal.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='https://allendjal.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <link rel='https://api.w.org/' href='https://allendjal.com/wp-json/' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://allendjal.com/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://allendjal.com/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 4.6.3" />
+    <link rel='shortlink' href='https://allendjal.com/' />
+    <link rel="alternate" type="application/json+oembed" href="https://allendjal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fallendjal.com%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="https://allendjal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fallendjal.com%2F&#038;format=xml" />
+    <script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var content = document.getElementById('content'),
+
+                images = content.getElementsByTagName('img');
+
+            for (var i = 0; i < images.length; i++) {
+
+                if (images[i].getAttribute('data-lazyload') != 'innoway') {
+
+                    images[i].setAttribute('data-lazyload', 'please');
+
+                }
+
+                images[i].setAttribute('data-src', images[i].getAttribute('src'));
+
+                images[i].setAttribute('src', '');
+
+            }
+
+        });
+    </script>
+    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
+    <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://allendjal.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+    <!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://allendjal.com/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+    <link rel="icon" href="https://allendjal.com/wp-content/uploads/2016/04/cropped-ad-site-icon-red-32x32.jpg" sizes="32x32" />
+    <link rel="icon" href="https://allendjal.com/wp-content/uploads/2016/04/cropped-ad-site-icon-red-192x192.jpg" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="https://allendjal.com/wp-content/uploads/2016/04/cropped-ad-site-icon-red-180x180.jpg" />
+    <meta name="msapplication-TileImage" content="https://allendjal.com/wp-content/uploads/2016/04/cropped-ad-site-icon-red-270x270.jpg" />
+    <style type="text/css">
+        html,
+        * html body {
+            margin-top: 0 !important;
+        }
+        #wpadminbar {
+            background: rgba(0, 0, 0, .4) !important;
+            opacity: .7 !important;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)" !important;
+            filter: alpha(opacity=70) !important;
+        }
+    </style>
+    <style id="tt-easy-google-font-styles" type="text/css">
+        p {
+            font-size: 20px;
+        }
+        h1 {
+            font-family: 'Playfair Display';
+            font-size: 52px;
+            font-style: normal;
+            font-weight: 900;
+        }
+        h2 {} h3 {
+            color: #000000;
+            font-family: 'Playfair Display';
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        h4 {
+            color: #000000;
+            font-family: 'Playfair Display';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        h5 {
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+        }
+        h6 {
+            color: #000000;
+            font-family: 'Playfair Display';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+    </style>
+    <noscript>
+        <style type="text/css">
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+
+    <link type="text/css" media="screen" rel="stylesheet" href="/wp-content/nominee/awwwards.css" />
+</head>
+<div id="awwwards" class="honorable black left">
+    <a href="http://www.awwwards.com/sites/allendjal-inc-creative-marketing" target="_blank">Awwwards</a>
+</div>
+
+<body id="body" class="home page page-id-161 page-template page-template-template-portfolio page-template-template-portfolio-php no-touch no-js overlap  menu-modern wpb-js-composer js-comp-ver-4.12 vc_responsive" data-background="dark">
+
+
+
+    <div id="wrapper">
+
+
+
+        <!-- Primary Header Start -->
+
+        <header id="header" class="clearfix">
+
+
+
+            <!-- Logo Start -->
+
+            <div id="logo-holder" class="left" itemscope itemtype="http://schema.org/Organization">
+                <h1> Ignite </h1>>
+
+
+
+
+               <!--  <a id="logo" href="https://allendjal.com/" style="width:200px;height:auto;" itemprop="url">
+
+
+
+                    <div class="light">
+
+                        <img class="regular-logo" src="https://allendjal.com/wp-content/uploads/2016/10/allendjal-inc-logo-white.png" alt="AllenDjal Inc." itemprop="logo" />
+
+                    </div>
+
+
+
+                    <div class="dark">
+
+                        <img class="regular-logo" src="https://allendjal.com/wp-content/uploads/2016/10/allendjal-inc-logo-black.png" alt="AllenDjal Inc." itemprop="logo" />
+
+                    </div>
+
+
+
+                </a> -->
+
+
+
+            </div>
+
+            <!-- Logo End -->
+
+
+
+            <div id="menu-holder" class="right">
+
+
+
+
+
+                <a id="menu-opener" class="lines-button" href="#"><span class="lines"></span></a>
+
+            </div>
+
+
+
+            <a class="post-close" href="#">
+                <svg class="krown-svg close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                    <g>
+                        <rect x="18" y="28" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.1464 -12.78)" width="25" height="4" />
+                        <rect x="18" y="28" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.28 30.3536)" width="25" height="4" />
+                    </g>
+                </svg>
+            </a>
+
+
+
+            <!-- Menu Start -->
+
+            <nav id="main-menu" class="clearfix style-modern lazybg" style="background-color:#ab0000" data-bg="https://allendjal.com/wp-content/uploads/2016/08/hero-menu.png">
+
+
+
+                <div>
+
+
+
+                    <ul id="menu-menu-1" class="clearfix top-menu">
+                        <li id="menu-item-362" class="selected menu-item"><a href="https://allendjal.com/"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        </li>
+                        <li id="menu-item-363" class="menu-item"><a href="https://allendjal.com/work/">Work</a>
+                        </li>
+                        <li id="menu-item-1426" class="menu-item"><a href="https://allendjal.com/about/">About</a>
+                        </li>
+                        <li id="menu-item-873" class="menu-item"><a href="https://allendjal.com/contact/">Contact</a>
+                        </li>
+                    </ul>
+
+
+                    <div id="menu-widget">AllenDjal Inc. is a Los Angeles based creative marketing agency dedicated to creating memorable brand experiences to help businesses thrive in the world.
+                        <br />
+                        <br />
+                        <a href="http://instagram.com/allendjalinc">Instagram</a> / <a href="http://twitter.com/allendjalinc">Twitter</a> / <a href="https://www.facebook.com/AllenDjal-284189718612015/">Facebook</a> / <a href="https://dribbble.com/allendjalinc">Dribbble</a> / <a href="https://www.behance.net/allendjalinc">Bēhance</a>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </nav>
+
+            <!-- Menu End -->
+
+
+
+        </header>
+
+        <!-- Primary Header End -->
+
+
+
+        <!-- Main Wrapper Start -->
+
+
+
+        <main id="content">
+
+
+
+
+
+            <div class="maskee">
+
+
+
+
+
+                <section class="pre-slide slide taken" data-background="dark">
+
+
+
+                    <header class="page-header caption">
+
+                        <div class="page-header-type">
+
+                            <h2 class="title"><span style="color: #fff;">Let’s Create Something People Will Remember</span></h2>
+
+                            <h6 class="subtitle"><span style="margin-bottom: 20px; color: #fff; font-size: 1.4rem; line-height: 2.5rem; font-style: normal; font-family: 'Playfair Display', serif; font-weight: 100; text-transform: none;">We create memorable brand experiences to help businesses thrive in the world<br/><br/><a class="allen-button normal light project-button" href="/work">View Our Work</a></span></h6>
+
+                        </div>
+
+                    </header>
+
+
+
+
+
+                    <div class="media" style="background-color: #f9f9f9" data-bg-small="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-960x552.png" data-bg-medium="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-1380x793.png" data-bg-large="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-1920x1103.png" data-bg-full="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero.png" data-bg-small-p="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-960x552.png" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-1380x793.png" data-bg-large-p="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero-1920x1103.png" data-bg-full-p="https://allendjal.com/wp-content/uploads/2015/11/AllenDjalInc-HomePage-Hero.png">
+
+                    </div>
+
+
+
+
+
+                </section>
+
+
+
+
+
+                <article id="post-1464" class="slide taken" data-background-l="dark" data-background-p="dark" itemscope itemtype="http://schema.org/CreativeWork">
+
+
+
+                    <header class="page-header caption">
+
+                        <div>
+
+                            <h2 class="title" itemprop="name">A Digital Experience For The Open-Source Community</h2>
+
+                            <h6 class="subtitle">Featured Work</h6>
+
+                            <div class="excerpt" itemprop="description">
+                                <p>{code} by Dell EMC &#038; AllenDjal Inc. bring the code community <a href="https://blog.codedellemc.com/">a single destination</a> to share thoughts and discuss the next-gen data storage infrastructure</p>
+                            </div>
+
+                            <a class="krown-button to-load dark custom-link" href="https://blog.codedellemc.com/" target="_blank" data-i="1" data-title="A Digital Experience For The Open-Source Community"><span>SEE THE BLOG<svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="24" height="42" viewBox="0 0 24 42" enable-background="new 0 0 24 42" xml:space="preserve"><polygon fill="dark" points="23.3 20.1 23.3 20.1 23.3 20.1 20.1 23.3 20.1 23.3 3.1 40.3 0 37.1 17 20.1 0 3.1 3.1 0 20.1 17 20.1 17 "/></svg></span></a>
+
+                        </div>
+
+                    </header>
+
+
+
+                    <div class="media" data-bg-small="https://allendjal.com/wp-content/uploads/2016/05/dell-emc-project-hero-1-1-960x535.jpg" data-bg-medium="https://allendjal.com/wp-content/uploads/2016/05/dell-emc-project-hero-1-1-1380x770.jpg" data-bg-large="https://allendjal.com/wp-content/uploads/2016/05/dell-emc-project-hero-1-1-1920x1071.jpg" data-bg-full="https://allendjal.com/wp-content/uploads/2016/05/dell-emc-project-hero-1-1.jpg" data-bg-small-p="https://allendjal.com/wp-content/uploads/2016/05/dellemc-project-hero-mobile-540x960.jpg" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2016/05/dellemc-project-hero-mobile-642x1140.jpg" data-bg-large-p="https://allendjal.com/wp-content/uploads/2016/05/dellemc-project-hero-mobile-833x1480.jpg" data-bg-full-p="https://allendjal.com/wp-content/uploads/2016/05/dellemc-project-hero-mobile.jpg">
+
+                        <img src="https://allendjal.com/wp-content/uploads/2016/05/dell-emc-project-hero-1-1-960x535.jpg" alt="A Digital Experience For The Open-Source Community" data-lazyload="innoway" itemprop="image" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" />
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+                <article id="post-720" class="slide taken" data-background-l="dark" data-background-p="dark" itemscope itemtype="http://schema.org/CreativeWork">
+
+
+
+                    <header class="page-header caption">
+
+                        <div>
+
+                            <h2 class="title" itemprop="name">Connecting with Prospects Through Integrated Marketing</h2>
+
+                            <h6 class="subtitle">Case Study</h6>
+
+                            <div class="excerpt" itemprop="description">
+                                <p>Multi-medium campaign generates thousands of interactions with future prospects</p>
+                            </div>
+
+                            <a class="krown-button to-load dark" href="https://allendjal.com/portfolio/dyk/" data-i="2" data-title="Connecting with Prospects Through Integrated Marketing"><span>VIEW CASE STUDY<svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="24" height="42" viewBox="0 0 24 42" enable-background="new 0 0 24 42" xml:space="preserve"><polygon fill="dark" points="23.3 20.1 23.3 20.1 23.3 20.1 20.1 23.3 20.1 23.3 3.1 40.3 0 37.1 17 20.1 0 3.1 3.1 0 20.1 17 20.1 17 "/></svg></span></a>
+
+                        </div>
+
+                    </header>
+
+
+
+                    <div class="media" data-bg-small="https://allendjal.com/wp-content/uploads/2016/05/sc14-project-hero-G-1-960x536.jpg" data-bg-medium="https://allendjal.com/wp-content/uploads/2016/05/sc14-project-hero-G-1-1380x770.jpg" data-bg-large="https://allendjal.com/wp-content/uploads/2016/05/sc14-project-hero-G-1-1920x1071.jpg" data-bg-full="https://allendjal.com/wp-content/uploads/2016/05/sc14-project-hero-G-1.jpg" data-bg-small-p="https://allendjal.com/wp-content/uploads/2016/05/ddn-sc14-project-hero-mobile-1-540x960.jpg" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2016/05/ddn-sc14-project-hero-mobile-1-642x1140.jpg" data-bg-large-p="https://allendjal.com/wp-content/uploads/2016/05/ddn-sc14-project-hero-mobile-1-833x1480.jpg" data-bg-full-p="https://allendjal.com/wp-content/uploads/2016/05/ddn-sc14-project-hero-mobile-1.jpg">
+
+                        <img src="https://allendjal.com/wp-content/uploads/2016/05/sc14-project-hero-G-1-960x536.jpg" alt="Connecting with Prospects Through Integrated Marketing" data-lazyload="innoway" itemprop="image" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" />
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+                <article id="post-713" class="slide taken" data-background-l="dark" data-background-p="dark" itemscope itemtype="http://schema.org/CreativeWork">
+
+
+
+                    <header class="page-header caption">
+
+                        <div>
+
+                            <h2 class="title" itemprop="name">Motivating A Global Team Creatively</h2>
+
+                            <h6 class="subtitle">Case Study</h6>
+
+                            <div class="excerpt" itemprop="description">
+                                <p><span style="color: #fff;">Inspiring, motivating and engaging a global team around “limitless opportunities” </span>
+                                </p>
+                            </div>
+
+                            <a class="krown-button to-load dark" href="https://allendjal.com/portfolio/limitless/" data-i="3" data-title="Motivating A Global Team Creatively"><span>VIEW CASE STUDY<svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="24" height="42" viewBox="0 0 24 42" enable-background="new 0 0 24 42" xml:space="preserve"><polygon fill="dark" points="23.3 20.1 23.3 20.1 23.3 20.1 20.1 23.3 20.1 23.3 3.1 40.3 0 37.1 17 20.1 0 3.1 3.1 0 20.1 17 20.1 17 "/></svg></span></a>
+
+                        </div>
+
+                    </header>
+
+
+
+                    <div class="media" data-bg-small="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-960x535.jpg" data-bg-medium="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-1380x770.jpg" data-bg-large="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-1920x1071.jpg" data-bg-full="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero.jpg" data-bg-small-p="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-mobile-540x960.jpg" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-mobile-642x1140.jpg" data-bg-large-p="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-mobile-833x1480.jpg" data-bg-full-p="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-mobile.jpg">
+
+                        <img src="https://allendjal.com/wp-content/uploads/2016/05/limitless-project-hero-960x535.jpg" alt="Motivating A Global Team Creatively" data-lazyload="innoway" itemprop="image" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" />
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+                <article id="post-766" class="slide taken" data-background-l="light" data-background-p="light" itemscope itemtype="http://schema.org/CreativeWork">
+
+
+
+                    <header class="page-header caption">
+
+                        <div>
+
+                            <h2 class="title" itemprop="name">Designing a Visual Identity For Fine Event Planning</h2>
+
+                            <h6 class="subtitle">Case Study</h6>
+
+                            <div class="excerpt" itemprop="description">
+                                <p>Designing a fresh and timeless look for a brand committed to creating effortlessly sophisticated celebrations</p>
+                            </div>
+
+                            <a class="krown-button to-load dark" href="https://allendjal.com/portfolio/haute-fetes/" data-i="4" data-title="Designing a Visual Identity For Fine Event Planning"><span>VIEW CASE STUDY<svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="24" height="42" viewBox="0 0 24 42" enable-background="new 0 0 24 42" xml:space="preserve"><polygon fill="dark" points="23.3 20.1 23.3 20.1 23.3 20.1 20.1 23.3 20.1 23.3 3.1 40.3 0 37.1 17 20.1 0 3.1 3.1 0 20.1 17 20.1 17 "/></svg></span></a>
+
+                        </div>
+
+                    </header>
+
+
+
+                    <div class="media" data-bg-small="https://allendjal.com/wp-content/uploads/2016/05/haute-case-hero-960x535.jpg" data-bg-medium="https://allendjal.com/wp-content/uploads/2016/05/haute-case-hero-1380x770.jpg" data-bg-large="https://allendjal.com/wp-content/uploads/2016/05/haute-case-hero-1920x1071.jpg" data-bg-full="https://allendjal.com/wp-content/uploads/2016/05/haute-case-hero.jpg" data-bg-small-p="https://allendjal.com/wp-content/uploads/2016/05/haute-fetes-case-hero-mobile-540x960.jpg" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2016/05/haute-fetes-case-hero-mobile-642x1140.jpg" data-bg-large-p="https://allendjal.com/wp-content/uploads/2016/05/haute-fetes-case-hero-mobile-833x1480.jpg" data-bg-full-p="https://allendjal.com/wp-content/uploads/2016/05/haute-fetes-case-hero-mobile.jpg">
+
+                        <img src="https://allendjal.com/wp-content/uploads/2016/05/haute-case-hero-960x535.jpg" alt="Designing a Visual Identity For Fine Event Planning" data-lazyload="innoway" itemprop="image" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" />
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+                <article id="post-349" class="slide taken" data-background-l="dark" data-background-p="dark" itemscope itemtype="http://schema.org/CreativeWork">
+
+
+
+                    <header class="page-header caption">
+
+                        <div>
+
+                            <h2 class="title" itemprop="name">Developing a Brand from Soup to Nuts</h2>
+
+                            <h6 class="subtitle">Case Study</h6>
+
+                            <div class="excerpt" itemprop="description">
+                                <p>Developing a brand identity for an all-new installation services company in Los Angeles committed to trust &#038; quality</p>
+                            </div>
+
+                            <a class="krown-button to-load dark" href="https://allendjal.com/portfolio/pis/" data-i="5" data-title="Developing a Brand from Soup to Nuts"><span>VIEW CASE STUDY<svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="24" height="42" viewBox="0 0 24 42" enable-background="new 0 0 24 42" xml:space="preserve"><polygon fill="dark" points="23.3 20.1 23.3 20.1 23.3 20.1 20.1 23.3 20.1 23.3 3.1 40.3 0 37.1 17 20.1 0 3.1 3.1 0 20.1 17 20.1 17 "/></svg></span></a>
+
+                        </div>
+
+                    </header>
+
+
+
+                    <div class="media" data-bg-small="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-1-960x536.jpg" data-bg-medium="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-1-1380x770.jpg" data-bg-large="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-1-1920x1071.jpg" data-bg-full="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-1.jpg" data-bg-small-p="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-mobile--540x960.jpg" data-bg-medium-p="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-mobile--642x1140.jpg" data-bg-large-p="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-mobile--833x1480.jpg" data-bg-full-p="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-mobile-.jpg">
+
+                        <img src="https://allendjal.com/wp-content/uploads/2016/05/pis-project-hero-1-960x536.jpg" alt="Developing a Brand from Soup to Nuts" data-lazyload="innoway" itemprop="image" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" />
+
+                    </div>
+
+
+
+                </article>
+
+
+
+
+
+            </div>
+
+
+
+            <a class="mouse-scroll remove maskee-helper" href="#"><span class="mouse"><span class="mouse-movement"></span></span></a>
+
+            <a class="touch-scroll remove maskee-helper" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+                    <line fill="#000000" x1="48.1" y1="34.61" x2="61.5" y2="34.61" />
+                    <path fill="#000000" d="M61.5 35.5H48.1c-0.49 0-0.89-0.4-0.89-0.89s0.4-0.89 0.89-0.89h13.41c0.49 0 0.89 0.4 0.89 0.89S62 35.5 61.5 35.5z" />
+                    <path fill="#000000" d="M50.78 38.19c-0.23 0-0.46-0.09-0.63-0.26l-2.68-2.68c-0.17-0.17-0.26-0.39-0.26-0.63 0-0.24 0.1-0.46 0.26-0.63l2.68-2.68c0.35-0.35 0.92-0.35 1.26 0 0.35 0.35 0.35 0.92 0 1.26l-2.05 2.05 2.05 2.05c0.35 0.35 0.35 0.91 0 1.26C51.24 38.1 51.01 38.19 50.78 38.19z" />
+                    <path fill="#000000" d="M65 41.95c0-0.74 0-1.44 0-2.1 -2-1.18-2.64-3.08-2.64-5.24 0-3.57 2.93-6.48 6.5-6.48s6.65 2.91 6.65 6.48c0 2.15-1.51 4.06-2.51 5.24v2.1c2-1.38 4.31-4.15 4.31-7.34 0-4.56-3.79-8.27-8.35-8.27s-8.35 3.71-8.35 8.27C60.61 37.8 62 40.57 65 41.95z" />
+                    <path fill="#000000" d="M92.79 51.47h-2.23c-0.63 0-1.27 0.15-1.84 0.43 -0.29-1.68-1.76-2.96-3.52-2.96h-2.23c-0.74 0-1.42 0.22-1.99 0.61 -0.49-1.39-1.82-2.38-3.37-2.38h-2.23c-0.65 0-1.26 0.18-1.79 0.48V34.61c0-2.59-2.1-4.69-4.69-4.69 -2.59 0-4.69 2.11-4.69 4.69v24.75c-1 0.48-1.93 1.12-2.74 1.92l-1.83 1.83c-3.83 3.83-3.83 10.07 0 13.9l5.11 5.11c0.25 0.25 0.51 0.48 0.78 0.7 1.7 2.93 4.88 4.91 8.52 4.91H86.53c5.42 0 9.83-4.39 9.83-9.79V55.05C96.36 53.07 94.76 51.47 92.79 51.47zM94.58 77.94c0 4.41-3.61 8-8.04 8H74.02c-1.47 0-2.85-0.4-4.04-1.09 -0.99-0.59-2.09-1.45-3.09-3.22 -0.58-1.1-0.91-2.36-0.91-3.69 0-0.49-0.4-0.89-0.89-0.89 -0.49 0-0.89 0.4-0.89 0.9 0 0.41 0.03 0.81 0.08 1.2l-3.39-3.39c-3.14-3.14-3.14-8.24 0-11.38l1.83-1.83c0.45-0.45 0.95-0.83 1.48-1.16v6.12c0 0.49 0.4 0.89 0.89 0.89 0.49 0 0.9-0.4 0.9-0.89V34.61c0-1.6 1.3-2.9 2.9-2.9s2.91 1.3 2.91 2.9V57.57c0 0.49 0.4 0.89 0.89 0.89 0.49 0 0.89-0.4 0.89-0.89v-6.83c0-0.99 0.8-1.79 1.79-1.79h2.23c0.99 0 1.79 0.8 1.79 1.79v6.84c0 0.49 0.4 0.89 0.9 0.89 0.49 0 0.89-0.4 0.89-0.89v-5.06c0-0.98 0.8-1.79 1.79-1.79h2.23c0.99 0 1.79 0.8 1.79 1.79v5.06c0 0.49 0.4 0.89 0.89 0.89 0.49 0 0.89-0.4 0.89-0.89v-3.24c0-0.52 0.92-1.07 1.79-1.07h2.23c0.99 0 1.79 0.8 1.79 1.79V77.94z" />
+                </svg>
+            </a>
+
+
+
+
+
+        </main>
+
+        <!-- Main Wrapper End -->
+
+
+
+        <!-- GTT Button -->
+
+        <a id="top" href="#">
+            <svg class="krown-svg arrow_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                <polygon fill="#FFFFFF" points="29.791,22.459 26.962,25.288 19.538,32.713 22.366,35.541 29.791,28.116 37.215,35.541 40.043,32.713 32.619,25.288 " />
+            </svg>
+        </a>
+
+
+
+        <!-- IE7 Message Start -->
+
+        <div id="oldie">
+
+            <p>This is a unique website which will require a more modern browser to work!
+                <br />
+                <br />
+
+                <a href="https://www.google.com/chrome/" target="_blank">Please upgrade today!</a>
+
+            </p>
+
+        </div>
+
+        <!-- IE7 Message End -->
+
+
+
+    </div>
+
+
+
+    <div id="preloader" data-ajax="enabled"></div>
+
+
+
+    <meta name="google-site-verification" content="f2r_7N9ZYtw-AfMLpjq-bmSrnlyD_wUFN8WiUdW-0TI" />
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-80845502-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+    <script>
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'www.fullstory.com';
+        window['_fs_org'] = '2407Q';
+        window['_fs_namespace'] = 'FS';
+        (function(m, n, e, t, l, o, g, y) {
+            if (e in m && m.console && m.console.log) {
+                m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+                return;
+            }
+            g = m[e] = function(a, b) {
+                g.q ? g.q.push([a, b]) : g._api(a, b);
+            };
+            g.q = [];
+            o = n.createElement(t);
+            o.async = 1;
+            o.src = 'https://' + _fs_host + '/s/fs.js';
+            y = n.getElementsByTagName(t)[0];
+            y.parentNode.insertBefore(o, y);
+            g.identify = function(i, v) {
+                g(l, {
+                    uid: i
+                });
+                if (v) g(l, v)
+            };
+            g.setUserVars = function(v) {
+                g(l, v)
+            };
+            g.identifyAccount = function(i, v) {
+                o = 'account';
+                v = v || {};
+                v.acctId = i;
+                g(o, v)
+            };
+            g.clearUserCookie = function(c, d, i) {
+                if (!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')) {
+                    d = n.domain;
+                    while (1) {
+                        n.cookie = 'fs_uid=;domain=' + d +
+                            ';path=/;expires=' + new Date(0).toUTCString();
+                        i = d.indexOf('.');
+                        if (i < 0) break;
+                        d = d.slice(i + 1)
+                    }
+                }
+            };
+        })(window, document, window['_fs_namespace'], 'script', 'user');
+    </script>
+    <script type='text/javascript' src='https://allendjal.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = {
+            "loaderUrl": "https:\/\/allendjal.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif",
+            "recaptcha": {
+                "messages": {
+                    "empty": "Please verify that you are not a robot."
+                }
+            },
+            "sending": "Sending ...",
+            "cached": "1"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='https://allendjal.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.5.1'></script>
+    <script type='text/javascript' src='https://allendjal.com/wp-content/themes/alpha/js/compressed/plugins-min.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var langObj = {
+            "post_comment": "Post comment",
+            "posted_comment": "Your comment was posted and it is awaiting moderation.",
+            "duplicate_comment": "Duplicate content detected. It seems that you've posted this before.",
+            "posting_comment": "Posting your comment, please wait...",
+            "required_comment": "Please complete all the required fields.",
+            "sort_products": "Sort by"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='https://allendjal.com/wp-content/themes/alpha/js/compressed/scripts-min.js'></script>
+    <script type='text/javascript' src='https://allendjal.com/wp-includes/js/wp-embed.min.js?ver=4.6.3'></script>
+
+
+
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam.nr-data.net",
+            "licenseKey": "46fa6ffa74",
+            "applicationID": "25838647",
+            "transactionName": "ZgQBZkJVXBVYUk1eDV9OIlFEXV0IFkVcWhJdABdXHURdFE1XVlsLXg==",
+            "queueTime": 0,
+            "applicationTime": 480,
+            "atts": "SkMCEApPTxs=",
+            "errorBeacon": "bam.nr-data.net",
+            "agent": ""
+        }
+    </script>
+</body>
+
+</html>

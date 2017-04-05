@@ -1,0 +1,138 @@
+doctype html
+html(lang='en')
+  head
+    // Theme Made By www.w3schools.com - No Copyright
+    title Ignite
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+      }
+      p {font-size: 16px;}
+      .margin {margin-bottom: 45px;}
+      .bg-1 {
+      background-image: url(img/row1.jpg);
+      background-position: fixed;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      }
+      .bg-2 {
+      background-image: url(img/row2.jpg);
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      }
+      .bg-3 {
+      background-image: url(img/row3.jpg);
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      }
+      .bg-4 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+      }
+      .container-fluid {
+      padding-top: 35px;
+      padding-bottom: 35px;
+      }
+      .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+      }
+      .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+      }
+  body
+    // Navbar
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Ignite
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='#') Refugee
+            li
+              a(href='#') Something
+            li
+              a(href='#') Muslin Ban
+    // First Container
+    .container-fluid.bg-1.text-center
+      h2.margin
+        | Refugee
+        p
+          | Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | News Linked: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | Facebook event: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | Donation: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    // Second Container
+    .container-fluid.bg-2.text-center
+      h3.margin What Am I?
+      p
+        | Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p
+        | News Linked: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p
+        | Facebook event: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p
+        | Donation: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      //
+        <a href="#" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-search"></span> Search
+        </a>
+    // Third Container (Grid)
+    .container-fluid.bg-3.text-center
+      h2.margin
+        | Where To Find Me?
+        br
+        p
+          | Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | News Linked: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | Facebook event: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p
+          | Donation: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        //
+          <div class="row">
+          <div class="col-sm-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <img src="static/birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+          </div>
+          <div class="col-sm-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <img src="static/birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+          </div>
+          <div class="col-sm-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <img src="static/birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+          </div>
+          </div>
+    // Footer
+    footer.container-fluid.bg-4.text-center
+      p
+        | Ignite Made By 
+        a(href='https://adicu.com/') adicu.com

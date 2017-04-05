@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "JARBS Base extension",
+  "description": "testing for the news aggregation site",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "New Tab"
+  },
+  "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+  "chrome_url_overrides":{
+     "newtab": "template.html"
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
